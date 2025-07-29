@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 222 47% 11%;
+    --background: 240 10% 3.9%;
     --foreground: 0 0% 100%;
 
     --card: 240 10% 8%;
@@ -15,16 +15,16 @@
     --popover: 240 10% 8%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 14 100% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 45 100% 50%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 176 70% 41%;
+    --secondary: 270 41% 65%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 240 10% 15%;
     --muted-foreground: 240 5% 65%;
 
-    --accent: 195 84% 55%;
+    --accent: 225 73% 57%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -32,9 +32,16 @@
 
     --border: 240 10% 18%;
     --input: 240 10% 15%;
-    --ring: 14 100% 60%;
+    --ring: 45 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
+
+    --minecraft-dark: 0 0% 4%;
+    --minecraft-gold: 45 100% 50%;
+    --minecraft-yellow: 60 100% 65%;
+    --minecraft-gray: 0 0% 16%;
+    --minecraft-purple: 270 41% 65%;
+    --minecraft-blue: 225 73% 57%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -110,16 +117,49 @@
     border-image: linear-gradient(45deg, #ff6b35, #4eddc4) 1;
   }
 
+  .minecraft-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .minecraft-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+  }
+
   .glow-effect {
     box-shadow:
-      0 0 20px rgba(255, 107, 53, 0.3),
-      0 0 40px rgba(78, 221, 196, 0.2);
+      0 0 20px rgba(255, 170, 0, 0.4),
+      0 0 40px rgba(255, 170, 0, 0.2);
   }
 
   .hover-glow:hover {
     box-shadow:
-      0 0 30px rgba(255, 107, 53, 0.5),
-      0 0 60px rgba(78, 221, 196, 0.3);
+      0 0 30px rgba(255, 170, 0, 0.6),
+      0 0 60px rgba(255, 170, 0, 0.3);
     transition: box-shadow 0.3s ease;
+  }
+
+  .pulse-animation {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .minecraft-skin {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
   }
 }

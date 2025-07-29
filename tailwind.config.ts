@@ -62,9 +62,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'minecraft-orange': '#FF6B35',
-				'minecraft-blue': '#4EDDC4',
-				'minecraft-cyan': '#5CB7D1'
+				'minecraft-dark': '#0a0a0a',
+				'minecraft-gold': '#FFAA00',
+				'minecraft-yellow': '#FFFF55',
+				'minecraft-gray': '#2a2a2a',
+				'minecraft-purple': '#667eea',
+				'minecraft-blue': '#764ba2'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
