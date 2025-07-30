@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -94,16 +95,42 @@ const Index = () => {
       </div>
 
       {/* Header */}
-      <header className="relative z-10 pt-8 pb-4">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex justify-center items-center mb-4">
-            <span className="text-4xl mr-3">🐕</span>
-            <h1 className="font-orbitron text-4xl md:text-5xl font-black text-white">
-              CHIWAWA SERVER
-            </h1>
+      <header className="relative z-10 border-b border-white/20 bg-black/20">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🐕</span>
+              <h1 className="font-orbitron text-xl font-bold text-white">CHIWAWA SERVER</h1>
+            </div>
+            <nav className="flex gap-4">
+              <Link to="/" className="text-minecraft-gold font-semibold">
+                Главная
+              </Link>
+              <Link to="/login" className="text-white/80 hover:text-minecraft-gold transition-colors">
+                Войти
+              </Link>
+              <Link to="/register" className="text-white/80 hover:text-minecraft-gold transition-colors">
+                Регистрация
+              </Link>
+            </nav>
           </div>
         </div>
       </header>
+
+      {/* Hero Section */}
+      <section className="relative z-10 py-16 text-center">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-center items-center mb-8">
+            <span className="text-6xl mr-4">🐕</span>
+            <h2 className="font-orbitron text-4xl md:text-6xl font-black text-white">
+              CHIWAWA SERVER
+            </h2>
+          </div>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Приватный Minecraft сервер с дружелюбным сообществом
+          </p>
+        </div>
+      </section>
 
       {/* Main Content */}
       <main className="relative z-10 container mx-auto px-4 py-12">
@@ -148,14 +175,25 @@ const Index = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link to="/register">
+                <Button 
+                  size="lg" 
+                  className="bg-minecraft-gold hover:bg-minecraft-yellow text-black font-bold px-8 py-3 text-lg glow-effect hover-glow transition-all duration-300"
+                >
+                  <Icon name="FileText" className="mr-2" />
+                  Подать заявку
+                </Button>
+              </Link>
+
               <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
                 <DialogTrigger asChild>
                   <Button 
                     size="lg" 
-                    className="bg-minecraft-gold hover:bg-minecraft-yellow text-black font-bold px-8 py-3 text-lg glow-effect hover-glow transition-all duration-300"
+                    variant="outline"
+                    className="bg-white/20 hover:bg-white/30 text-white border border-white/30 font-bold px-8 py-3 text-lg transition-all duration-300"
                   >
                     <Icon name="FileText" className="mr-2" />
-                    Подать заявку
+                    Быстрая заявка
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="minecraft-glass border-none text-white max-w-md">
